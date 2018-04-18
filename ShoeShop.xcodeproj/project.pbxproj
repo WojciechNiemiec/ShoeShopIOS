@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D005FFE02087A99100BE790A /* ItemCellModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */; };
 		D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD428B207F6B08004EB704 /* AppDelegate.swift */; };
-		D0AD428E207F6B08004EB704 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD428D207F6B08004EB704 /* ViewController.swift */; };
 		D0AD4291207F6B08004EB704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AD428F207F6B08004EB704 /* Main.storyboard */; };
 		D0AD4293207F6B0B004EB704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AD4292207F6B0B004EB704 /* Assets.xcassets */; };
 		D0AD4296207F6B0B004EB704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AD4294207F6B0B004EB704 /* LaunchScreen.storyboard */; };
 		D0AD42A1207F6B0C004EB704 /* ShoeShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42A0207F6B0C004EB704 /* ShoeShopTests.swift */; };
 		D0AD42AC207F6B0C004EB704 /* ShoeShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42AB207F6B0C004EB704 /* ShoeShopUITests.swift */; };
+		D0AD42BA207F6C67004EB704 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42B9207F6C67004EB704 /* TableViewController.swift */; };
+		D0AD42BD207F6C67004EB704 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42BB207F6C67004EB704 /* ItemCell.swift */; };
+		D0AD42BE207F6C67004EB704 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AD42BC207F6C67004EB704 /* ItemCell.xib */; };
+		D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellModelGenerator.swift; sourceTree = "<group>"; };
 		D0AD4288207F6B08004EB704 /* ShoeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AD428B207F6B08004EB704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0AD428D207F6B08004EB704 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D0AD4290207F6B08004EB704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0AD4292207F6B0B004EB704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0AD4295207F6B0B004EB704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		D0AD42A7207F6B0C004EB704 /* ShoeShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoeShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AD42AB207F6B0C004EB704 /* ShoeShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeShopUITests.swift; sourceTree = "<group>"; };
 		D0AD42AD207F6B0C004EB704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0AD42B9207F6C67004EB704 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D0AD42BB207F6C67004EB704 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		D0AD42BC207F6C67004EB704 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellModelImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				D0AD428B207F6B08004EB704 /* AppDelegate.swift */,
-				D0AD428D207F6B08004EB704 /* ViewController.swift */,
 				D0AD428F207F6B08004EB704 /* Main.storyboard */,
 				D0AD4292207F6B0B004EB704 /* Assets.xcassets */,
 				D0AD4294207F6B0B004EB704 /* LaunchScreen.storyboard */,
 				D0AD4297207F6B0B004EB704 /* Info.plist */,
+				D0AD42B9207F6C67004EB704 /* TableViewController.swift */,
+				D0AD42BB207F6C67004EB704 /* ItemCell.swift */,
+				D0AD42BC207F6C67004EB704 /* ItemCell.xib */,
+				D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */,
+				D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */,
 			);
 			path = ShoeShop;
 			sourceTree = "<group>";
@@ -231,6 +243,7 @@
 			files = (
 				D0AD4296207F6B0B004EB704 /* LaunchScreen.storyboard in Resources */,
 				D0AD4293207F6B0B004EB704 /* Assets.xcassets in Resources */,
+				D0AD42BE207F6C67004EB704 /* ItemCell.xib in Resources */,
 				D0AD4291207F6B08004EB704 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0AD428E207F6B08004EB704 /* ViewController.swift in Sources */,
+				D005FFE02087A99100BE790A /* ItemCellModelGenerator.swift in Sources */,
+				D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */,
 				D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */,
+				D0AD42BA207F6C67004EB704 /* TableViewController.swift in Sources */,
+				D0AD42BD207F6C67004EB704 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
