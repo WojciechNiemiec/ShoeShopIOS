@@ -8,10 +8,26 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+protocol ModelAppender {
+    func append(_ itemCellModel: ItemCellModel) -> Void
+    func refresh() -> Void
+}
+
+class TableViewController: UITableViewController, ModelAppender {
     
     private let cellIdentifier = "reuseIdentifier"
     private var cellModels: [ItemCellModel]?
+    
+    func append(_ itemCellModel: ItemCellModel) {
+        if (cellModels == nil) {
+            cellModels = [ItemCellModel]()
+        }
+        cellModels?.append(itemCellModel)
+    }
+    
+    func refresh() {
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +37,12 @@ class TableViewController: UITableViewController {
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         
         let generator = ItemCellModelGenerator()
-        cellModels = generator.generate(quantity: 10)
+        generator.generate(completion: {models in
+            self.cellModels = models
+            DispatchQueue.main.async {
+                self.refresh()
+            }
+        })
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46F2ECA43DAF8F3A2F921FFB /* Pods_ShoeShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF7C11F5E0994A4BBCCDE53 /* Pods_ShoeShopUITests.framework */; };
 		D005FFE02087A99100BE790A /* ItemCellModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */; };
 		D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD428B207F6B08004EB704 /* AppDelegate.swift */; };
 		D0AD4291207F6B08004EB704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AD428F207F6B08004EB704 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 		D0AD42BD207F6C67004EB704 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42BB207F6C67004EB704 /* ItemCell.swift */; };
 		D0AD42BE207F6C67004EB704 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AD42BC207F6C67004EB704 /* ItemCell.xib */; };
 		D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */; };
+		E2A7EAFD618D574F7DDB5B58 /* Pods_ShoeShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5F4EDB3FC30C685B9C3F6 /* Pods_ShoeShop.framework */; };
+		E59FA4F1EF29EB7996769112 /* Pods_ShoeShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862E5BFD5E04E33669FF8C92 /* Pods_ShoeShopTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17BFE91648E573F688819273 /* Pods-ShoeShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShop/Pods-ShoeShop.release.xcconfig"; sourceTree = "<group>"; };
+		3EC5F4EDB3FC30C685B9C3F6 /* Pods_ShoeShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoeShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		484531F157D6D9C3B07E4657 /* Pods-ShoeShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShopTests/Pods-ShoeShopTests.release.xcconfig"; sourceTree = "<group>"; };
+		49EFA65B676E07625AA710D0 /* Pods-ShoeShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShopUITests/Pods-ShoeShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F3FD2BA7AE2A8B151C95C6D /* Pods-ShoeShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShopTests/Pods-ShoeShopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		862E5BFD5E04E33669FF8C92 /* Pods_ShoeShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoeShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9483644B1C8C54FB6965023B /* Pods-ShoeShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShop/Pods-ShoeShop.debug.xcconfig"; sourceTree = "<group>"; };
+		BBF7C11F5E0994A4BBCCDE53 /* Pods_ShoeShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoeShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellModelGenerator.swift; sourceTree = "<group>"; };
 		D0AD4288207F6B08004EB704 /* ShoeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AD428B207F6B08004EB704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +66,7 @@
 		D0AD42BB207F6C67004EB704 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		D0AD42BC207F6C67004EB704 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellModelImpl.swift; sourceTree = "<group>"; };
+		E71ABA324C66E3330EA1EE58 /* Pods-ShoeShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShopUITests/Pods-ShoeShopUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A7EAFD618D574F7DDB5B58 /* Pods_ShoeShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59FA4F1EF29EB7996769112 /* Pods_ShoeShopTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +90,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F2ECA43DAF8F3A2F921FFB /* Pods_ShoeShopUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95E1B0383BF063D5DF540703 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EC5F4EDB3FC30C685B9C3F6 /* Pods_ShoeShop.framework */,
+				862E5BFD5E04E33669FF8C92 /* Pods_ShoeShopTests.framework */,
+				BBF7C11F5E0994A4BBCCDE53 /* Pods_ShoeShopUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0AD427F207F6B08004EB704 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +114,8 @@
 				D0AD429F207F6B0C004EB704 /* ShoeShopTests */,
 				D0AD42AA207F6B0C004EB704 /* ShoeShopUITests */,
 				D0AD4289207F6B08004EB704 /* Products */,
+				FC2FE860BD6FDFA345170AC1 /* Pods */,
+				95E1B0383BF063D5DF540703 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +164,19 @@
 			path = ShoeShopUITests;
 			sourceTree = "<group>";
 		};
+		FC2FE860BD6FDFA345170AC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9483644B1C8C54FB6965023B /* Pods-ShoeShop.debug.xcconfig */,
+				17BFE91648E573F688819273 /* Pods-ShoeShop.release.xcconfig */,
+				5F3FD2BA7AE2A8B151C95C6D /* Pods-ShoeShopTests.debug.xcconfig */,
+				484531F157D6D9C3B07E4657 /* Pods-ShoeShopTests.release.xcconfig */,
+				49EFA65B676E07625AA710D0 /* Pods-ShoeShopUITests.debug.xcconfig */,
+				E71ABA324C66E3330EA1EE58 /* Pods-ShoeShopUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0AD42B0207F6B0C004EB704 /* Build configuration list for PBXNativeTarget "ShoeShop" */;
 			buildPhases = (
+				B160FC1D447733FF9EDC28DF /* [CP] Check Pods Manifest.lock */,
 				D0AD4284207F6B08004EB704 /* Sources */,
 				D0AD4285207F6B08004EB704 /* Frameworks */,
 				D0AD4286207F6B08004EB704 /* Resources */,
+				F1082D5DC8E5A02FC545D8F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0AD42B3207F6B0C004EB704 /* Build configuration list for PBXNativeTarget "ShoeShopTests" */;
 			buildPhases = (
+				FF193B74BF711B1CE1159F56 /* [CP] Check Pods Manifest.lock */,
 				D0AD4298207F6B0C004EB704 /* Sources */,
 				D0AD4299207F6B0C004EB704 /* Frameworks */,
 				D0AD429A207F6B0C004EB704 /* Resources */,
@@ -179,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0AD42B6207F6B0C004EB704 /* Build configuration list for PBXNativeTarget "ShoeShopUITests" */;
 			buildPhases = (
+				26942F6A58DC3C5A9AFC0EBC /* [CP] Check Pods Manifest.lock */,
 				D0AD42A3207F6B0C004EB704 /* Sources */,
 				D0AD42A4207F6B0C004EB704 /* Frameworks */,
 				D0AD42A5207F6B0C004EB704 /* Resources */,
@@ -263,6 +307,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26942F6A58DC3C5A9AFC0EBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShoeShopUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B160FC1D447733FF9EDC28DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShoeShop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1082D5DC8E5A02FC545D8F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShoeShop/Pods-ShoeShop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoeShop/Pods-ShoeShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF193B74BF711B1CE1159F56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShoeShopTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0AD4284207F6B08004EB704 /* Sources */ = {
@@ -444,6 +563,7 @@
 		};
 		D0AD42B1207F6B0C004EB704 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9483644B1C8C54FB6965023B /* Pods-ShoeShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -461,6 +581,7 @@
 		};
 		D0AD42B2207F6B0C004EB704 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17BFE91648E573F688819273 /* Pods-ShoeShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +599,7 @@
 		};
 		D0AD42B4207F6B0C004EB704 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F3FD2BA7AE2A8B151C95C6D /* Pods-ShoeShopTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +620,7 @@
 		};
 		D0AD42B5207F6B0C004EB704 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484531F157D6D9C3B07E4657 /* Pods-ShoeShopTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +641,7 @@
 		};
 		D0AD42B7207F6B0C004EB704 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49EFA65B676E07625AA710D0 /* Pods-ShoeShopUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -537,6 +661,7 @@
 		};
 		D0AD42B8207F6B0C004EB704 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E71ABA324C66E3330EA1EE58 /* Pods-ShoeShopUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,4 @@
+*.lock
+*.xcworkspace
+Shoeshop.xcodeproj/xcuserdata/*
+Pods/
