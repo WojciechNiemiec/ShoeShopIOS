@@ -16,4 +16,9 @@ protocol ItemCellModel {
 struct ItemCellModelImpl: ItemCellModel {
     let name: String
     let price: String
+    
+    init(shoeItem: ShoeItem) {
+        name = shoeItem.brand + " " + shoeItem.model
+        price = shoeItem.price.description
+    }
 }

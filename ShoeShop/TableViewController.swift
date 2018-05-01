@@ -36,9 +36,9 @@ class TableViewController: UITableViewController, ModelAppender {
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         
-        let generator = ItemCellModelGenerator()
-        generator.generate(completion: {models in
-            self.cellModels = models
+        let client = WebServiceClient()
+        client.getShoes(pagination: Pagination(page: 0, size: 100), completion: {items in
+            self.cellModels = items.map {ItemCellModelImpl(shoeItem: $0)}
             DispatchQueue.main.async {
                 self.refresh()
             }

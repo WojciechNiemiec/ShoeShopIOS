@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		46F2ECA43DAF8F3A2F921FFB /* Pods_ShoeShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF7C11F5E0994A4BBCCDE53 /* Pods_ShoeShopUITests.framework */; };
-		D005FFE02087A99100BE790A /* ItemCellModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */; };
+		D01650F12092279E00D547A0 /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01650F02092279E00D547A0 /* WebServiceClient.swift */; };
+		D01650F52092623500D547A0 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01650F42092623500D547A0 /* Pagination.swift */; };
+		D01650F720927ADB00D547A0 /* ShoeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01650F620927ADB00D547A0 /* ShoeItem.swift */; };
 		D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD428B207F6B08004EB704 /* AppDelegate.swift */; };
 		D0AD4291207F6B08004EB704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AD428F207F6B08004EB704 /* Main.storyboard */; };
 		D0AD4293207F6B0B004EB704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AD4292207F6B0B004EB704 /* Assets.xcassets */; };
@@ -49,7 +51,9 @@
 		862E5BFD5E04E33669FF8C92 /* Pods_ShoeShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoeShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9483644B1C8C54FB6965023B /* Pods-ShoeShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShop/Pods-ShoeShop.debug.xcconfig"; sourceTree = "<group>"; };
 		BBF7C11F5E0994A4BBCCDE53 /* Pods_ShoeShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoeShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellModelGenerator.swift; sourceTree = "<group>"; };
+		D01650F02092279E00D547A0 /* WebServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceClient.swift; sourceTree = "<group>"; };
+		D01650F42092623500D547A0 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		D01650F620927ADB00D547A0 /* ShoeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeItem.swift; sourceTree = "<group>"; };
 		D0AD4288207F6B08004EB704 /* ShoeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AD428B207F6B08004EB704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0AD4290207F6B08004EB704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D01650EF2092279E00D547A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D01650F02092279E00D547A0 /* WebServiceClient.swift */,
+				D01650F42092623500D547A0 /* Pagination.swift */,
+				D01650F620927ADB00D547A0 /* ShoeItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D0AD427F207F6B08004EB704 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +146,7 @@
 		D0AD428A207F6B08004EB704 /* ShoeShop */ = {
 			isa = PBXGroup;
 			children = (
+				D01650EF2092279E00D547A0 /* Model */,
 				D0AD428B207F6B08004EB704 /* AppDelegate.swift */,
 				D0AD428F207F6B08004EB704 /* Main.storyboard */,
 				D0AD4292207F6B0B004EB704 /* Assets.xcassets */,
@@ -141,7 +156,6 @@
 				D0AD42BB207F6C67004EB704 /* ItemCell.swift */,
 				D0AD42BC207F6C67004EB704 /* ItemCell.xib */,
 				D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */,
-				D005FFDF2087A99100BE790A /* ItemCellModelGenerator.swift */,
 			);
 			path = ShoeShop;
 			sourceTree = "<group>";
@@ -388,11 +402,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D005FFE02087A99100BE790A /* ItemCellModelGenerator.swift in Sources */,
 				D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */,
 				D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */,
+				D01650F52092623500D547A0 /* Pagination.swift in Sources */,
+				D01650F12092279E00D547A0 /* WebServiceClient.swift in Sources */,
 				D0AD42BA207F6C67004EB704 /* TableViewController.swift in Sources */,
 				D0AD42BD207F6C67004EB704 /* ItemCell.swift in Sources */,
+				D01650F720927ADB00D547A0 /* ShoeItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
