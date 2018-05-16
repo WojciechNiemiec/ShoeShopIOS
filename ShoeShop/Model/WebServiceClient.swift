@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias Completion = ([ShoeItem]) -> Void
+typealias Completion = (ShoePage) -> Void
 
 struct WebServiceClient {
     
@@ -34,11 +34,9 @@ struct WebServiceClient {
         URLSession.shared.dataTask(with: request, completionHandler: {(_data, _response, _error) in
             if let data = _data {
                 do {
-                    let shoeItems = try JSONDecoder().decode([ShoeItem].self, from: data)
-                    completion(shoeItems)
-                } catch {
-                    print(_error!)
-                }
+                    let shoePage = try JSONDecoder().decode(ShoePage.self, from: data)
+                    completion(shoePage)
+                } catch {}
             }
         }).resume()
     }

@@ -11,6 +11,8 @@
 		D01650F12092279E00D547A0 /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01650F02092279E00D547A0 /* WebServiceClient.swift */; };
 		D01650F52092623500D547A0 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01650F42092623500D547A0 /* Pagination.swift */; };
 		D01650F720927ADB00D547A0 /* ShoeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01650F620927ADB00D547A0 /* ShoeItem.swift */; };
+		D01650FA2098817D00D547A0 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01650F92098817D00D547A0 /* FilterController.swift */; };
+		D01A3EE920ACDA5600E28B2E /* ShoePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A3EE820ACDA5600E28B2E /* ShoePage.swift */; };
 		D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD428B207F6B08004EB704 /* AppDelegate.swift */; };
 		D0AD4291207F6B08004EB704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AD428F207F6B08004EB704 /* Main.storyboard */; };
 		D0AD4293207F6B0B004EB704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AD4292207F6B0B004EB704 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		D01650F02092279E00D547A0 /* WebServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceClient.swift; sourceTree = "<group>"; };
 		D01650F42092623500D547A0 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		D01650F620927ADB00D547A0 /* ShoeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeItem.swift; sourceTree = "<group>"; };
+		D01650F92098817D00D547A0 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
+		D01A3EE820ACDA5600E28B2E /* ShoePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoePage.swift; sourceTree = "<group>"; };
 		D0AD4288207F6B08004EB704 /* ShoeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AD428B207F6B08004EB704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0AD4290207F6B08004EB704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,8 +121,18 @@
 				D01650F02092279E00D547A0 /* WebServiceClient.swift */,
 				D01650F42092623500D547A0 /* Pagination.swift */,
 				D01650F620927ADB00D547A0 /* ShoeItem.swift */,
+				D01A3EE820ACDA5600E28B2E /* ShoePage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D01650F8209880CD00D547A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0AD42B9207F6C67004EB704 /* TableViewController.swift */,
+				D01650F92098817D00D547A0 /* FilterController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D0AD427F207F6B08004EB704 = {
@@ -146,13 +160,13 @@
 		D0AD428A207F6B08004EB704 /* ShoeShop */ = {
 			isa = PBXGroup;
 			children = (
+				D01650F8209880CD00D547A0 /* Controller */,
 				D01650EF2092279E00D547A0 /* Model */,
 				D0AD428B207F6B08004EB704 /* AppDelegate.swift */,
 				D0AD428F207F6B08004EB704 /* Main.storyboard */,
 				D0AD4292207F6B0B004EB704 /* Assets.xcassets */,
 				D0AD4294207F6B0B004EB704 /* LaunchScreen.storyboard */,
 				D0AD4297207F6B0B004EB704 /* Info.plist */,
-				D0AD42B9207F6C67004EB704 /* TableViewController.swift */,
 				D0AD42BB207F6C67004EB704 /* ItemCell.swift */,
 				D0AD42BC207F6C67004EB704 /* ItemCell.xib */,
 				D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */,
@@ -402,9 +416,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01A3EE920ACDA5600E28B2E /* ShoePage.swift in Sources */,
 				D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */,
 				D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */,
 				D01650F52092623500D547A0 /* Pagination.swift in Sources */,
+				D01650FA2098817D00D547A0 /* FilterController.swift in Sources */,
 				D01650F12092279E00D547A0 /* WebServiceClient.swift in Sources */,
 				D0AD42BA207F6C67004EB704 /* TableViewController.swift in Sources */,
 				D0AD42BD207F6C67004EB704 /* ItemCell.swift in Sources */,

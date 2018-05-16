@@ -37,8 +37,8 @@ class TableViewController: UITableViewController, ModelAppender {
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         
         let client = WebServiceClient()
-        client.getShoes(pagination: Pagination(page: 0, size: 100), completion: {items in
-            self.cellModels = items.map {ItemCellModelImpl(shoeItem: $0)}
+        client.getShoes(pagination: Pagination(page: 0, size: 100), completion: {page in
+            self.cellModels = page.content.map {ItemCellModelImpl(shoeItem: $0)}
             DispatchQueue.main.async {
                 self.refresh()
             }
@@ -58,6 +58,10 @@ class TableViewController: UITableViewController, ModelAppender {
         }
         
         return cell
+    }
+    
+    @IBAction func filter(_ sender: UIStoryboardSegue) {
+        
     }
     
     /*
