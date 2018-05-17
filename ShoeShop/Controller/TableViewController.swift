@@ -9,18 +9,19 @@
 import UIKit
 
 protocol ModelAppender {
-    func append(_ itemCellModel: ItemCellModel) -> Void
+    func append(_ itemCellModel: ItemCellModelImpl) -> Void
     func refresh() -> Void
 }
 
 class TableViewController: UITableViewController, ModelAppender {
     
     private let cellIdentifier = "reuseIdentifier"
-    private var cellModels: [ItemCellModel]?
+    private var cellModels: [ItemCellModelImpl]?
+    private var idToImage = [Int: UIImage]()
     
-    func append(_ itemCellModel: ItemCellModel) {
+    func append(_ itemCellModel: ItemCellModelImpl) {
         if (cellModels == nil) {
-            cellModels = [ItemCellModel]()
+            cellModels = [ItemCellModelImpl]()
         }
         cellModels?.append(itemCellModel)
     }
@@ -39,10 +40,21 @@ class TableViewController: UITableViewController, ModelAppender {
         let client = WebServiceClient()
         client.getShoes(pagination: Pagination(page: 0, size: 100), completion: {page in
             self.cellModels = page.content.map {ItemCellModelImpl(shoeItem: $0)}
+            
             DispatchQueue.main.async {
                 self.refresh()
+                let ids = page.content.map{$0.variantId}
+                client.getPictures(for: ids, completion: {id, picture in
+                    if let model = self.cellModels?.filter({el in el.variantId == id}).first {
+                        model.image = picture
+                        let index = self.cellModels?.index(of: model)!
+                        let indexPath = IndexPath(item: index!, section: 0)
+                        self.tableView.reloadRows(at: [indexPath], with: .top)
+                    }
+                })
             }
         })
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,6 +67,7 @@ class TableViewController: UITableViewController, ModelAppender {
         if let tempCellModel = cellModels?[indexPath.row] {
             cell.nameLabel.text = tempCellModel.name
             cell.priceLabel.text = tempCellModel.price + " PLN"
+            cell.itemImage.image = tempCellModel.image
         }
         
         return cell
