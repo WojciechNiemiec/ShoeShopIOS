@@ -14,7 +14,7 @@ protocol ModelAppender {
 }
 
 class TableViewController: UITableViewController, ModelAppender {
-    
+  
     private let cellIdentifier = "reuseIdentifier"
     private var cellModels: [ItemCellModelImpl]?
     private var idToImage = [Int: UIImage]()
@@ -49,7 +49,10 @@ class TableViewController: UITableViewController, ModelAppender {
                         model.image = picture
                         let index = self.cellModels?.index(of: model)!
                         let indexPath = IndexPath(item: index!, section: 0)
-                        self.tableView.reloadRows(at: [indexPath], with: .top)
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadRows(at: [indexPath], with: .top)
+                        }
                     }
                 })
             }

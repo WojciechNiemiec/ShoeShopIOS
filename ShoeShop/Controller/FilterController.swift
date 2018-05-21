@@ -17,13 +17,16 @@ class FilterController: UIViewController {
     
     @IBOutlet weak var brandFilterTable: UITableView!
     
-    @IBOutlet weak var ColorFilterTable: UITableView!
+    @IBOutlet weak var colorFilterTable: UITableView!
     
-    let brands = ["NIKE", "REEBOOK"]
+    let brandTableController = BrandTableController()
+    
+    let colorTableController = ColorTableController()
     
     override func viewDidLoad() {
-        let brands = ["NIKE": "Nike", "NEW_BALANCE": "New Balance"]
-        brandFilterTable.setValuesForKeys(brands)
-        brandFilterTable.reloadData()
+        brandFilterTable.delegate = brandTableController;
+        brandFilterTable.dataSource = brandTableController;
+        colorFilterTable.delegate = colorTableController;
+        colorFilterTable.dataSource = colorTableController;
     }
 }
