@@ -69,7 +69,7 @@ class TableViewController: UITableViewController, ModelAppender {
         
         if let tempCellModel = cellModels?[indexPath.row] {
             cell.nameLabel.text = tempCellModel.name
-            cell.priceLabel.text = tempCellModel.price + " PLN"
+            cell.priceLabel.text = tempCellModel.price + " "
             cell.itemImage.image = tempCellModel.image
         }
         
