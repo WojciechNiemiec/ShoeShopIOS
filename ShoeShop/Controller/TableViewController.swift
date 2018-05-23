@@ -16,6 +16,7 @@ protocol ModelAppender {
 class TableViewController: UITableViewController, ModelAppender {
   
     private let cellIdentifier = "reuseIdentifier"
+    private let segueIdentifier = "showFilters"
     private var cellModels: [ItemCellModelImpl]?
     private var idToImage = [Int: UIImage]()
     
@@ -69,7 +70,7 @@ class TableViewController: UITableViewController, ModelAppender {
         
         if let tempCellModel = cellModels?[indexPath.row] {
             cell.nameLabel.text = tempCellModel.name
-            cell.priceLabel.text = tempCellModel.price + " "
+            cell.priceLabel.text = tempCellModel.price
             cell.itemImage.image = tempCellModel.image
         }
         
@@ -77,7 +78,13 @@ class TableViewController: UITableViewController, ModelAppender {
     }
     
     @IBAction func filter(_ sender: UIStoryboardSegue) {
-        
+//        sender.source as
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            
+        }
     }
     
     /*

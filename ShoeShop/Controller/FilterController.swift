@@ -29,4 +29,14 @@ class FilterController: UIViewController {
         colorFilterTable.delegate = colorTableController;
         colorFilterTable.dataSource = colorTableController;
     }
+    
+    func getFilter() -> Filter {
+        let priceFrom = priceFromField.text.flatMap {Double($0)} ?? 0.00
+        let priceTo = priceToField.text.flatMap {Double($0)} ?? 9999.99
+        
+        return Filter(priceFrom: priceFrom,
+                      priceTo: priceTo,
+                      brands: [],
+                      colors: [])
+    }
 }
