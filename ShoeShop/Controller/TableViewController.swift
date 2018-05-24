@@ -16,12 +16,15 @@ protocol ModelAppender {
 class TableViewController: UITableViewController, FilterDelegate {
     
     private let cellIdentifier = "reuseIdentifier"
-    private let segueIdentifier = "showFilters"
+    private let filterSegueIdentifier = "showFilters"
+    private let presentSegueIdentifier = "showDetails"
+    private var shoeItems: [ShoeItem] = []
     private var cellModels: [ItemCellModelImpl]?
     private var idToImage = [Int: UIImage]()
     
     fileprivate func fillTable(with page: (ShoePage), using client: WebServiceClient) {
-        self.cellModels = page.content.map {ItemCellModelImpl(shoeItem: $0)}
+        shoeItems = page.content
+        self.cellModels = shoeItems.map {ItemCellModelImpl(shoeItem: $0)}
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -69,16 +72,25 @@ class TableViewController: UITableViewController, FilterDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: presentSegueIdentifier, sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdentifier {
+        if segue.identifier == filterSegueIdentifier {
             let controller = segue.destination as! FilterController
             controller.delegate = self
+        } else if segue.identifier == presentSegueIdentifier {
+            let controller = segue.destination as! ShoeViewController
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let shoeItem = shoeItems[indexPath.row]
+            controller.shoe = shoeItem
+            controller.image = cellModels?.filter {$0.variantId == shoeItem.variantId}.first?.image
         }
     }
     
-    @IBAction func unwind(_ sender: UIStoryboardSegue) {}
-    
     func onFilterReceived(_ filter: Filter) {
+        navigationController?.popViewController(animated: true)
         let client = WebServiceClient()
         client.getShoes(filter: filter, pagination: Pagination(page: 0, size: 100), completion: {page in
             self.fillTable(with: page, using: client)

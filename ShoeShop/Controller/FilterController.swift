@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol FilterDelegate {
+protocol FilterDelegate: class {
     func onFilterReceived(_ filter: Filter)
 }
 
@@ -23,7 +23,7 @@ class FilterController: UIViewController {
     
     @IBOutlet weak var colorFilterTable: UITableView!
     
-    var delegate: FilterDelegate?
+    weak var delegate: FilterDelegate?
     
     let brandTableViewModel = BrandTableViewModel()
     
