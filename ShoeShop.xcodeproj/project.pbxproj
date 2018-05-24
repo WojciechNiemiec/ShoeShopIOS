@@ -23,10 +23,11 @@
 		D0AD42BA207F6C67004EB704 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42B9207F6C67004EB704 /* TableViewController.swift */; };
 		D0AD42BD207F6C67004EB704 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42BB207F6C67004EB704 /* ItemCell.swift */; };
 		D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */; };
-		D0D588F620ADA5AA00BC9FBC /* BrandTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D588F520ADA5AA00BC9FBC /* BrandTableController.swift */; };
-		D0FF4F9F20B3386600CB246E /* ColorTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF4F9E20B3386600CB246E /* ColorTableController.swift */; };
+		D0D588F620ADA5AA00BC9FBC /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D588F520ADA5AA00BC9FBC /* TableViewModel.swift */; };
+		D0FF4F9F20B3386600CB246E /* ColorTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF4F9E20B3386600CB246E /* ColorTableViewModel.swift */; };
 		D0FF4FA120B353FB00CB246E /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF4FA020B353FB00CB246E /* Filter.swift */; };
 		D0FF4FA320B58BD800CB246E /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FF4FA220B58BD800CB246E /* ItemCell.xib */; };
+		D0FF4FA520B6C96200CB246E /* BrandTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF4FA420B6C96200CB246E /* BrandTableViewModel.swift */; };
 		E2A7EAFD618D574F7DDB5B58 /* Pods_ShoeShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5F4EDB3FC30C685B9C3F6 /* Pods_ShoeShop.framework */; };
 		E59FA4F1EF29EB7996769112 /* Pods_ShoeShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862E5BFD5E04E33669FF8C92 /* Pods_ShoeShopTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,10 +79,11 @@
 		D0AD42B9207F6C67004EB704 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D0AD42BB207F6C67004EB704 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		D0AD42BF207F6C67004EB704 /* ItemCellModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellModelImpl.swift; sourceTree = "<group>"; };
-		D0D588F520ADA5AA00BC9FBC /* BrandTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTableController.swift; sourceTree = "<group>"; };
-		D0FF4F9E20B3386600CB246E /* ColorTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableController.swift; sourceTree = "<group>"; };
+		D0D588F520ADA5AA00BC9FBC /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		D0FF4F9E20B3386600CB246E /* ColorTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewModel.swift; sourceTree = "<group>"; };
 		D0FF4FA020B353FB00CB246E /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		D0FF4FA220B58BD800CB246E /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		D0FF4FA420B6C96200CB246E /* BrandTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTableViewModel.swift; sourceTree = "<group>"; };
 		E71ABA324C66E3330EA1EE58 /* Pods-ShoeShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoeShopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoeShopUITests/Pods-ShoeShopUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,8 +143,9 @@
 			children = (
 				D0AD42B9207F6C67004EB704 /* TableViewController.swift */,
 				D01650F92098817D00D547A0 /* FilterController.swift */,
-				D0D588F520ADA5AA00BC9FBC /* BrandTableController.swift */,
-				D0FF4F9E20B3386600CB246E /* ColorTableController.swift */,
+				D0D588F520ADA5AA00BC9FBC /* TableViewModel.swift */,
+				D0FF4F9E20B3386600CB246E /* ColorTableViewModel.swift */,
+				D0FF4FA420B6C96200CB246E /* BrandTableViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -436,14 +439,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FF4FA520B6C96200CB246E /* BrandTableViewModel.swift in Sources */,
 				D01A3EE920ACDA5600E28B2E /* ShoePage.swift in Sources */,
 				D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */,
 				D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */,
 				D01650F52092623500D547A0 /* Pagination.swift in Sources */,
-				D0FF4F9F20B3386600CB246E /* ColorTableController.swift in Sources */,
+				D0FF4F9F20B3386600CB246E /* ColorTableViewModel.swift in Sources */,
 				D01650FA2098817D00D547A0 /* FilterController.swift in Sources */,
 				D01650F12092279E00D547A0 /* WebServiceClient.swift in Sources */,
-				D0D588F620ADA5AA00BC9FBC /* BrandTableController.swift in Sources */,
+				D0D588F620ADA5AA00BC9FBC /* TableViewModel.swift in Sources */,
 				D0AD42BA207F6C67004EB704 /* TableViewController.swift in Sources */,
 				D064CB1920ADE62A009904BB /* SelectableCellModel.swift in Sources */,
 				D0FF4FA120B353FB00CB246E /* Filter.swift in Sources */,

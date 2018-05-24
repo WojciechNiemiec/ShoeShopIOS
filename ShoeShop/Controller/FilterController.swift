@@ -25,15 +25,15 @@ class FilterController: UIViewController {
     
     var delegate: FilterDelegate?
     
-    let brandTableController = BrandTableController()
+    let brandTableViewModel = BrandTableViewModel()
     
-    let colorTableController = ColorTableController()
+    let colorTableViewModel = ColorTableViewModel()
     
     override func viewDidLoad() {
-        brandFilterTable.delegate = brandTableController;
-        brandFilterTable.dataSource = brandTableController;
-        colorFilterTable.delegate = colorTableController;
-        colorFilterTable.dataSource = colorTableController;
+        brandFilterTable.delegate = brandTableViewModel;
+        brandFilterTable.dataSource = brandTableViewModel;
+        colorFilterTable.delegate = colorTableViewModel;
+        colorFilterTable.dataSource = colorTableViewModel;
     }
     
     @IBAction func onFilter(_ sender: Any) {
@@ -42,8 +42,8 @@ class FilterController: UIViewController {
         
         let filter = Filter(priceFrom: priceFrom,
                       priceTo: priceTo,
-                      brands: [],
-                      colors: [])
+                      brands: brandTableViewModel.getSelectedKeys(),
+                      colors: colorTableViewModel.getSelectedKeys())
         
         delegate?.onFilterReceived(filter)
     }
