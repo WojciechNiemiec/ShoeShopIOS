@@ -140,8 +140,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Filter"/>
                                 <connections>
-                                    <action selector="filter:" destination="9mt-fM-2RB" eventType="touchUpInside" id="1gt-GB-iN0"/>
-                                    <segue destination="9mt-fM-2RB" kind="unwind" unwindAction="filter:" id="aOn-Ql-saB"/>
+                                    <action selector="onFilter:" destination="Z15-T1-Yea" eventType="touchUpInside" id="Yt2-8G-KhM"/>
+                                    <segue destination="9mt-fM-2RB" kind="unwind" unwindAction="unwind:" id="XyQ-bb-O51"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1o-wq-OBL">
@@ -185,6 +185,7 @@
                     <connections>
                         <outlet property="ColorFilterTable" destination="Fbq-tl-4XR" id="7Qa-gM-01W"/>
                         <outlet property="brandFilterTable" destination="hEV-b3-qVM" id="rFE-Co-7o2"/>
+                        <outlet property="colorFilterTable" destination="Fbq-tl-4XR" id="7lk-xo-WrO"/>
                         <outlet property="priceFromField" destination="w1o-wq-OBL" id="KFx-LA-dE0"/>
                         <outlet property="priceToField" destination="m3t-eh-sz3" id="4IW-Wj-oKh"/>
                     </connections>

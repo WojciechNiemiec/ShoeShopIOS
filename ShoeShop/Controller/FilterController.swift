@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol FilterDelegate {
+    func onFilterReceived(_ filter: Filter)
+}
+
 class FilterController: UIViewController {
     
     @IBOutlet weak var priceFromField: UITextField!
@@ -18,6 +22,8 @@ class FilterController: UIViewController {
     @IBOutlet weak var brandFilterTable: UITableView!
     
     @IBOutlet weak var colorFilterTable: UITableView!
+    
+    var delegate: FilterDelegate?
     
     let brandTableController = BrandTableController()
     
@@ -30,13 +36,15 @@ class FilterController: UIViewController {
         colorFilterTable.dataSource = colorTableController;
     }
     
-    func getFilter() -> Filter {
+    @IBAction func onFilter(_ sender: Any) {
         let priceFrom = priceFromField.text.flatMap {Double($0)} ?? 0.00
         let priceTo = priceToField.text.flatMap {Double($0)} ?? 9999.99
         
-        return Filter(priceFrom: priceFrom,
+        let filter = Filter(priceFrom: priceFrom,
                       priceTo: priceTo,
                       brands: [],
                       colors: [])
+        
+        delegate?.onFilterReceived(filter)
     }
 }

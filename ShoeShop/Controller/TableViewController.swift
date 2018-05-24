@@ -13,22 +13,31 @@ protocol ModelAppender {
     func refresh() -> Void
 }
 
-class TableViewController: UITableViewController, ModelAppender {
-  
+class TableViewController: UITableViewController, FilterDelegate {
+    
     private let cellIdentifier = "reuseIdentifier"
     private let segueIdentifier = "showFilters"
     private var cellModels: [ItemCellModelImpl]?
     private var idToImage = [Int: UIImage]()
     
-    func append(_ itemCellModel: ItemCellModelImpl) {
-        if (cellModels == nil) {
-            cellModels = [ItemCellModelImpl]()
+    fileprivate func fillTable(with page: (ShoePage), using client: WebServiceClient) {
+        self.cellModels = page.content.map {ItemCellModelImpl(shoeItem: $0)}
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            let ids = page.content.map{$0.variantId}
+            client.getPictures(for: ids, completion: {id, picture in
+                if let model = self.cellModels?.filter({el in el.variantId == id}).first {
+                    model.image = picture
+                    let index = self.cellModels?.index(of: model)!
+                    let indexPath = IndexPath(item: index!, section: 0)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadRows(at: [indexPath], with: .left)
+                    }
+                }
+            })
         }
-        cellModels?.append(itemCellModel)
-    }
-    
-    func refresh() {
-        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -40,25 +49,8 @@ class TableViewController: UITableViewController, ModelAppender {
         
         let client = WebServiceClient()
         client.getShoes(pagination: Pagination(page: 0, size: 100), completion: {page in
-            self.cellModels = page.content.map {ItemCellModelImpl(shoeItem: $0)}
-            
-            DispatchQueue.main.async {
-                self.refresh()
-                let ids = page.content.map{$0.variantId}
-                client.getPictures(for: ids, completion: {id, picture in
-                    if let model = self.cellModels?.filter({el in el.variantId == id}).first {
-                        model.image = picture
-                        let index = self.cellModels?.index(of: model)!
-                        let indexPath = IndexPath(item: index!, section: 0)
-                        
-                        DispatchQueue.main.async {
-                            self.tableView.reloadRows(at: [indexPath], with: .top)
-                        }
-                    }
-                })
-            }
+            self.fillTable(with: page, using: client)
         })
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,59 +69,19 @@ class TableViewController: UITableViewController, ModelAppender {
         return cell
     }
     
-    @IBAction func filter(_ sender: UIStoryboardSegue) {
-//        sender.source as
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
-            
+            let controller = segue.destination as! FilterController
+            controller.delegate = self
         }
     }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {}
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func onFilterReceived(_ filter: Filter) {
+        let client = WebServiceClient()
+        client.getShoes(filter: filter, pagination: Pagination(page: 0, size: 100), completion: {page in
+            self.fillTable(with: page, using: client)
+        })
+    }
 }

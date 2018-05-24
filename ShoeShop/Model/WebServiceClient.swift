@@ -22,17 +22,39 @@ struct WebServiceClient {
     
     func getShoes(pagination: Pagination, completion: @escaping PageCompletion) {
 
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "http"
-        urlComponents.host = host
-        urlComponents.path = shoesPath.appending(findPath)
-        urlComponents.queryItems = pagination.toQueryItems()
+        guard let url = getFindComponents(pagination: pagination).url else {
+            return
+        }
+        
+        execute(request: URLRequest(url: url), with: completion)
+    }
+    
+    func getShoes(phrase: String, pagination: Pagination, completion: @escaping PageCompletion) {
+        
+        var urlComponents = getFindComponents(pagination: pagination)
+        urlComponents.path.append("/" + phrase)
         
         guard let url = urlComponents.url else {
             return
         }
         
         execute(request: URLRequest(url: url), with: completion)
+    }
+    
+    func getShoes(filter: Filter, pagination: Pagination, completion: @escaping PageCompletion) {
+        
+        guard let url = getFindComponents(pagination: pagination).url else {
+            return
+        }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpBody = try JSONEncoder().encode(filter)
+            request.httpMethod = "POST"
+            request.allHTTPHeaderFields = ["Content-Type": "application/json"]
+            
+            execute(request: request, with: completion)
+        } catch {}
     }
     
     func getPictures(for shoeIds: [Int], completion: @escaping ImageCompletion) {
@@ -48,6 +70,16 @@ struct WebServiceClient {
             
             execute(request: URLRequest(url: url), with: completion, relatedTo: id)
         }
+    }
+    
+    private func getFindComponents(pagination: Pagination) -> URLComponents {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "http"
+        urlComponents.host = host
+        urlComponents.path = shoesPath.appending(findPath)
+        urlComponents.queryItems = pagination.toQueryItems()
+        
+        return urlComponents
     }
     
     private func execute(request: URLRequest, with completion: @escaping PageCompletion) {
