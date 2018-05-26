@@ -43,7 +43,7 @@ class FilterController: UIViewController {
         let filter = Filter(priceFrom: priceFrom,
                       priceTo: priceTo,
                       brands: brandTableViewModel.getSelectedKeys(),
-                      colors: colorTableViewModel.getSelectedKeys())
+                      shankColors: colorTableViewModel.getSelectedKeys())
         
         delegate?.onFilterReceived(filter)
     }

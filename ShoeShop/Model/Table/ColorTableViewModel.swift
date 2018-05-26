@@ -18,6 +18,7 @@ class ColorTableViewModel: TableViewModel {
                  SelectableCellModel(key: "RED", value: "Red"),
                  SelectableCellModel(key: "GREEN", value: "Green"),
                  SelectableCellModel(key: "BLUE", value: "Blue"),
-                 SelectableCellModel(key: "YELLOW", value: "Yellow")]
+                 SelectableCellModel(key: "YELLOW", value: "Yellow"),
+                 SelectableCellModel(key: "ORANGE", value: "Orange")]
     }
 }

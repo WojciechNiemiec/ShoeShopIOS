@@ -12,5 +12,5 @@ struct Filter: Codable {
     var priceFrom: Double
     var priceTo: Double
     var brands: Array<String>
-    var colors: Array<String>
+    var shankColors: Array<String>
 }

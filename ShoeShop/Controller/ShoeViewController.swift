@@ -20,6 +20,7 @@ class ShoeViewController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var sizePicker: UIPickerView!
     
     override func viewDidLoad() {
         if let shoe = shoe {
@@ -30,6 +31,8 @@ class ShoeViewController: UIViewController {
             descriptionLabel.text = shoe.description
             imageView.image = image
         }
+        
+//        sizePicker.
     }
     
     @IBAction func addToCart(_ sender: Any) {
