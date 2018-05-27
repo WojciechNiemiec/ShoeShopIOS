@@ -51,7 +51,7 @@ class TableViewController: UITableViewController, FilterDelegate {
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         
         let client = WebServiceClient()
-        client.getShoes(pagination: Pagination(page: 0, size: 100), completion: {page in
+        client.getShoes(pagination: Pagination(page: 0, size: 4), completion: {page in
             self.fillTable(with: page, using: client)
         })
     }

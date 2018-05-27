@@ -11,12 +11,14 @@ import UIKit
 
 typealias PageCompletion = (ShoePage) -> Void
 typealias ImageCompletion = (Int, UIImage) -> Void
+typealias SizesCompletion = ([SizeDTO]) -> Void
 
 struct WebServiceClient {
     
     private var host = "www.shoeshop.us-east-2.elasticbeanstalk.com"
     private var shoesPath = "/shoes"
     private var findPath = "/find"
+    private var sizePath = "/sizes"
     private let idPath = "/%d"
     private let picturePath = "/picture"
     
@@ -70,6 +72,22 @@ struct WebServiceClient {
             
             execute(request: URLRequest(url: url), with: completion, relatedTo: id)
         }
+    }
+    
+    func getSizes(for variantId: Int, completion: @escaping SizesCompletion) {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "http"
+        urlComponents.host = host
+        urlComponents.path = shoesPath.appendingFormat(idPath, variantId).appending(sizePath)
+        
+        URLSession.shared.dataTask(with: URLRequest(url: urlComponents.url!), completionHandler: {(_data, _response, _error) in
+            if let data = _data {
+                do {
+                    let sizes = try JSONDecoder().decode(Array<SizeDTO>.self, from: data)
+                    completion(sizes)
+                } catch {}
+            }
+        }).resume()
     }
     
     private func getFindComponents(pagination: Pagination) -> URLComponents {

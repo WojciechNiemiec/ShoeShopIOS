@@ -11,10 +11,9 @@ import UIKit
 
 class CartViewController: UIViewController {
     
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var picker: UIPickerView!
     
-    override func viewDidLoad() {
-        
-       
+    @IBAction func hide(_ sender: Any) {
+        picker.isHidden = !picker.isHidden
     }
 }
