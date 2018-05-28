@@ -24,6 +24,8 @@ class TableViewModel: NSObject, UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = model.value
         if model.isSelected {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
         
         return cell
@@ -35,9 +37,7 @@ class TableViewModel: NSObject, UITableViewDataSource, UITableViewDelegate {
         } else {
             models[indexPath.row].isSelected = true
         }
-        DispatchQueue.main.async {
-            tableView.reloadRows(at: [indexPath], with: .none)
-        }
+        tableView.reloadData()
     }
     
     func getSelectedKeys() -> [String] {

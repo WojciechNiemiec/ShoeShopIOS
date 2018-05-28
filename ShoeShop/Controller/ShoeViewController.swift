@@ -88,5 +88,6 @@ class ShoeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         sizeLabel.text = sizes[row].size.description
         sizeLabel.textColor = UIColor.black
+        sizeLabel.setNeedsDisplay()
     }
 }
