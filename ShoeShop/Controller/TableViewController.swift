@@ -46,7 +46,7 @@ class TableViewController: UITableViewController, FilterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nibName = String(describing: ItemCell.self)
+        let nibName = String(describing: ShoeItemCell.self)
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         
@@ -61,7 +61,7 @@ class TableViewController: UITableViewController, FilterDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ShoeItemCell
         
         if let tempCellModel = cellModels?[indexPath.row] {
             cell.nameLabel.text = tempCellModel.name

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemCell: UITableViewCell {
+class ShoeItemCell: UITableViewCell {
     
     @IBOutlet weak var itemImage: UIImageView!
     
