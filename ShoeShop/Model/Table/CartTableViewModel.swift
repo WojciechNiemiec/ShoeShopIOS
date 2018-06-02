@@ -36,4 +36,9 @@ class CartTableViewModel: NSObject, UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+//    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let height = self.tableView(tableView, cellForRowAt: indexPath).contentView.frame.height
+//        return height > 0 ? height : 0
+//    }
 }

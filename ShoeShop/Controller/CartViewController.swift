@@ -29,7 +29,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var flatLabel: UITextField!
     
     override func viewDidLoad() {
-        let cartTableViewModel = CartTableViewModel(items: (cart?.shoes)!)
+        let cartTableViewModel = CartTableViewModel(items: cart.shoes)
         
         let nibName = String(describing: CartItemCell.self)
         let nib = UINib(nibName: nibName, bundle: nil)
@@ -38,6 +38,11 @@ class CartViewController: UIViewController {
         tableView.delegate = cartTableViewModel
         tableView.dataSource = cartTableViewModel
         
-        //tableViewHeight.constant = tableView.rowHeight * CGFloat(cart.shoes.count)
+        updateTableViewHeight()
+    }
+    
+    private func updateTableViewHeight() {
+        let height = (tableView.dequeueReusableCell(withIdentifier: cellIdentifier)?.frame.height)! * CGFloat(cart.shoes.count)
+        tableViewHeight.constant = height
     }
 }
