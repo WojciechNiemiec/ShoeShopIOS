@@ -1,5 +1,5 @@
 //
-//  VariantDTO.swift
+//  SizedShoeItem.swift
 //  ShoeShop
 //
 //  Created by Wojciech Niemiec on 6/1/18.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct VariantDTO: Codable {
-    var variantId: Int
+struct SizedShoeItem{
+    var shoe: ShoeItem
     var size: Int
-    var quantity: Int
+    
 }

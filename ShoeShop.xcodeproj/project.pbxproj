@@ -17,6 +17,9 @@
 		D05312D320C177BD00688864 /* OrderDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05312CF20C177BD00688864 /* OrderDTO.swift */; };
 		D05312D420C177BD00688864 /* VariantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05312D020C177BD00688864 /* VariantDTO.swift */; };
 		D05312D520C177BD00688864 /* ReceiverDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05312D120C177BD00688864 /* ReceiverDTO.swift */; };
+		D05312D720C1EF2F00688864 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05312D620C1EF2E00688864 /* Cart.swift */; };
+		D05312D920C1F55600688864 /* SizedShoeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05312D820C1F55600688864 /* SizedShoeItem.swift */; };
+		D05312DB20C209A200688864 /* CartTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05312DA20C209A200688864 /* CartTableViewModel.swift */; };
 		D0648F8420B6F28200DE2379 /* ShoeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F8320B6F28200DE2379 /* ShoeViewController.swift */; };
 		D0648F8720B7228200DE2379 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F8520B7228200DE2379 /* CartItemCell.swift */; };
 		D0648F8820B7228200DE2379 /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0648F8620B7228200DE2379 /* CartItemCell.xib */; };
@@ -76,6 +79,9 @@
 		D05312CF20C177BD00688864 /* OrderDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDTO.swift; sourceTree = "<group>"; };
 		D05312D020C177BD00688864 /* VariantDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariantDTO.swift; sourceTree = "<group>"; };
 		D05312D120C177BD00688864 /* ReceiverDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverDTO.swift; sourceTree = "<group>"; };
+		D05312D620C1EF2E00688864 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		D05312D820C1F55600688864 /* SizedShoeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizedShoeItem.swift; sourceTree = "<group>"; };
+		D05312DA20C209A200688864 /* CartTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewModel.swift; sourceTree = "<group>"; };
 		D0648F8320B6F28200DE2379 /* ShoeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeViewController.swift; sourceTree = "<group>"; };
 		D0648F8520B7228200DE2379 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
 		D0648F8620B7228200DE2379 /* CartItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCell.xib; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 				D01A3EE820ACDA5600E28B2E /* ShoePage.swift */,
 				D064CB1820ADE62A009904BB /* SelectableCellModel.swift */,
 				D0FF4FA020B353FB00CB246E /* Filter.swift */,
+				D05312D620C1EF2E00688864 /* Cart.swift */,
+				D05312D820C1F55600688864 /* SizedShoeItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 				D0D588F520ADA5AA00BC9FBC /* TableViewModel.swift */,
 				D0FF4F9E20B3386600CB246E /* ColorTableViewModel.swift */,
 				D0FF4FA420B6C96200CB246E /* BrandTableViewModel.swift */,
+				D05312DA20C209A200688864 /* CartTableViewModel.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -252,8 +261,8 @@
 			children = (
 				D0FF4FA220B58BD800CB246E /* ShoeItemCell.xib */,
 				D0AD42BB207F6C67004EB704 /* ShoeItemCell.swift */,
-				D0648F8520B7228200DE2379 /* CartItemCell.swift */,
 				D0648F8620B7228200DE2379 /* CartItemCell.xib */,
+				D0648F8520B7228200DE2379 /* CartItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -486,6 +495,7 @@
 				D0FF4FA520B6C96200CB246E /* BrandTableViewModel.swift in Sources */,
 				D01A3EE920ACDA5600E28B2E /* ShoePage.swift in Sources */,
 				D0AD42C0207F6C67004EB704 /* ItemCellModelImpl.swift in Sources */,
+				D05312D920C1F55600688864 /* SizedShoeItem.swift in Sources */,
 				D05312D220C177BD00688864 /* AddressDTO.swift in Sources */,
 				D05312D520C177BD00688864 /* ReceiverDTO.swift in Sources */,
 				D0AD428C207F6B08004EB704 /* AppDelegate.swift in Sources */,
@@ -495,9 +505,11 @@
 				D01650FA2098817D00D547A0 /* FilterController.swift in Sources */,
 				D01650F12092279E00D547A0 /* WebServiceClient.swift in Sources */,
 				D0D588F620ADA5AA00BC9FBC /* TableViewModel.swift in Sources */,
+				D05312D720C1EF2F00688864 /* Cart.swift in Sources */,
 				D0648F8E20B8B7F900DE2379 /* SizeDTO.swift in Sources */,
 				D05312D320C177BD00688864 /* OrderDTO.swift in Sources */,
 				D0AD42BA207F6C67004EB704 /* TableViewController.swift in Sources */,
+				D05312DB20C209A200688864 /* CartTableViewModel.swift in Sources */,
 				D064CB1920ADE62A009904BB /* SelectableCellModel.swift in Sources */,
 				D0648F8420B6F28200DE2379 /* ShoeViewController.swift in Sources */,
 				D05312D420C177BD00688864 /* VariantDTO.swift in Sources */,

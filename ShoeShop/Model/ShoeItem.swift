@@ -15,6 +15,8 @@ struct ShoeItem: Codable {
     var model: String
     var price: Double
     var shoeType: String
+    var shankColor: String
+    var soleColor: String
     var gender: String
     var description: String
 }

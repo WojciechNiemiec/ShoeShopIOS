@@ -14,6 +14,7 @@ class ShoeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var sizes = Array<SizeDTO>()
     var shoe: ShoeItem?
     var image: UIImage?
+    var cart: Cart?
     
     var addToCartSegue = "addToCartSegue"
     
@@ -62,6 +63,7 @@ class ShoeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if size == "unspecified" {
                 sizeLabel.textColor = UIColor.red
             } else {
+                cart?.add(shoe: shoe!, size: Int(size)!)
                 performSegue(withIdentifier: addToCartSegue, sender: nil)
             }
         }
@@ -69,7 +71,8 @@ class ShoeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == addToCartSegue {
-            
+            let controller = segue.destination as! CartViewController
+            controller.cart = cart
         }
     }
     

@@ -18,9 +18,12 @@ class TableViewController: UITableViewController, FilterDelegate {
     private let cellIdentifier = "reuseIdentifier"
     private let filterSegueIdentifier = "showFilters"
     private let presentSegueIdentifier = "showDetails"
+    private let cartSegueIdentifier = "showCart"
     private var shoeItems: [ShoeItem] = []
     private var cellModels: [ItemCellModelImpl]?
     private var idToImage = [Int: UIImage]()
+    
+    private var cart = Cart()
     
     fileprivate func fillTable(with page: (ShoePage), using client: WebServiceClient) {
         shoeItems = page.content
@@ -86,6 +89,10 @@ class TableViewController: UITableViewController, FilterDelegate {
             let shoeItem = shoeItems[indexPath.row]
             controller.shoe = shoeItem
             controller.image = cellModels?.filter {$0.variantId == shoeItem.variantId}.first?.image
+            controller.cart = cart
+        } else if segue.identifier == cartSegueIdentifier {
+            let controller = segue.destination as! CartViewController
+            controller.cart = cart
         }
     }
     
